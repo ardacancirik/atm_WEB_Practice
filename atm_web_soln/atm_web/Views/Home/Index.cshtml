@@ -1,0 +1,17 @@
+﻿@model atm_web.Models.Data.Account
+
+<h2>Welcome to the ATM</h2>
+<form asp-controller="Home" asp-action="ValidateAccount" method="post">
+    <label for="accountNumber">Account Number:</label>
+    <input type="text" name="accountNumber" required>
+    <br>
+    <label for="pin">PIN:</label>
+    <input type="password" name="pin" required>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <p>@ViewData["ErrorMessage"]</p>
+}
